@@ -1,0 +1,17 @@
+*.o
+*.so
+*.exe
+LecroyScope2Root
+*.root
+~*
+*~
+*.swp
+*Dict*
+*.d
+*User*
+.deps
+.nfs*
+G__auto*
+*.log
+*.dSYM
+*.pcm
