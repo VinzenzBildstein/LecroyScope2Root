@@ -413,13 +413,13 @@ bool Oscilloscope::ReadAsciiFile(const char* fileName) {
 
   if(fSamplingRate != 0.) {
     if(fDownSampling != 0 && fDownSampling != 1) {
-      if(abs(fSamplingRate/fSampleInterval - (double) fDownSampling) > fSampleInterval/fRecordLength) {
+      if(std::abs(fSamplingRate/fSampleInterval - (double) fDownSampling) > fSampleInterval/fRecordLength) {
 	std::cerr<<"Warning, the sampling rate you wish to have ("<<fSamplingRate<<") doesn't seem to match down-sampling you want ("<<fDownSampling<<"), going to re-calculate the down-sampling factor"<<std::endl;
       }
     }
     //(re-)calculate the down-sampling factor
     fDownSampling = (size_t) round(fSamplingRate/fSampleInterval);
-    if(abs(fSamplingRate/fSampleInterval - (double) fDownSampling) > fSampleInterval/fRecordLength) {
+    if(std::abs(fSamplingRate/fSampleInterval - (double) fDownSampling) > fSampleInterval/fRecordLength) {
       std::cerr<<"Warning, the sampling rate you wish to have ("<<fSamplingRate<<") doesn't seem to be a multiple of the sampling interval of the data ("<<fSampleInterval<<"), you'll have an effective sampling rate of "<<fDownSampling*fSampleInterval<<" (fDownSampling = "<<fDownSampling<<" = "<<fSamplingRate/fSampleInterval<<")"<<std::endl;
     }
   }

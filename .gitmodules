@@ -1,0 +1,3 @@
+[submodule "CommandLineInterface"]
+	path = CommandLineInterface
+	url = git@github.com:VinzenzBildstein/CommandLineInterface.git

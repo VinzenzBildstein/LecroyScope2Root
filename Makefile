@@ -16,7 +16,7 @@ NAME		= LecroyScope2Root
 ROOTLIBS     	:= $(shell root-config --glibs) -lMathMore -lRooFitCore -lRooFit
 ROOTINC      	:= -I$(shell root-config --incdir)
 
-COMMON_DIR 	= $(HOME)/Common
+COMMON_DIR 	= CommandLineInterface
 
 INCLUDES        = -I$(COMMON_DIR) -I$(MACRO_DIR) -I.
 
