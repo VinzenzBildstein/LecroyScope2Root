@@ -75,6 +75,9 @@ public:
   float   GetAcquisitionVerticalOffset() { return fAcquisitionVerticalOffset; }
   int16_t GetWaveSource() { return fWaveSource; }
 
+  double GetMinVoltage() { return fMinValue*fVerticalGain-fVerticalOffset; }
+  double GetMaxVoltage() { return fMaxValue*fVerticalGain-fVerticalOffset; }
+
   size_t  GetVerboseLevel() { return fVerboseLevel; }
 
 private:

@@ -28,6 +28,9 @@ int main(int argc, char** argv) {
 	}
 
 	if(inputFileNames.size() == 1 && IsDirectory(inputFileNames[0])) {
+		if(inputFileNames[0].back() != '/') {
+			inputFileNames[0].append("/");
+		}
 		if(verboseLevel > 0) {
 			std::cout<<"From directory '"<<inputFileNames[0]<<"', got ";
 		}

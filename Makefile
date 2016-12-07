@@ -18,7 +18,7 @@ ROOTINC      	:= -I$(shell root-config --incdir)
 
 COMMON_DIR 	= CommandLineInterface
 
-INCLUDES        = -I$(COMMON_DIR) -I$(MACRO_DIR) -I.
+INCLUDES        = -I$(COMMON_DIR) -I.
 
 LIBRARIES	= CommandLineInterface Utilities
 
@@ -46,7 +46,7 @@ all:  $(NAME) $(LIB_DIR)/lib$(NAME).so
 	@echo Done
 
 $(LIB_DIR)/lib$(NAME).so: $(LOADLIBES)
-	$(CXX) $(LDFLAGS) -shared -Wl,-soname,lib$(NAME).so -o $(LIB_DIR)/lib$(NAME).so.1.0.1 $(LOADLIBES) -lc
+	$(CXX) $(LDFLAGS) -shared -Wl,-soname,lib$(NAME).so -o $(LIB_DIR)/lib$(NAME).so $(LOADLIBES) -lc
 
 # -------------------- pattern rules --------------------
 # this rule sets the name of the .cc file at the beginning of the line (easier to find)
